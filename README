@@ -1,0 +1,5 @@
+Max Goldstein - .vim directory
+
+This folder contains the .vimrc configuration, my colorscheme (busybee.vim) and Pydiction plugins in the appropriate subdirectories.
+
+There is a symbolic link to the .vimrc in my home folder.
