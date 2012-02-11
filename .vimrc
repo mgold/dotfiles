@@ -4,6 +4,9 @@
 "Taken primarily from Marshall Moutenot (mmoutenot) and Eliot Alter (ealter),
 "who took it from multiple sources scattered across the internet
 
+set nocompatible 
+set number
+
 let mapleader = ","
 let g:mapleader = ","
 nmap <leader>w :w!<cr>
@@ -60,9 +63,6 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set smarttab
-
-set nocompatible 
-set number
 
 set lbr
 set tw=500
