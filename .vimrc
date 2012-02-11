@@ -1,22 +1,24 @@
 "Max Goldstein
-
 ".vimrc
+"
 "Taken primarily from Marshall Moutenot (mmoutenot) and Eliot Alter (ealter),
 "who took it from multiple sources scattered across the internet
+"
+"Documentation on set 'preference' is available at
+"http://vimdoc.sourceforge.net/htmldoc/options.html
+
 
 set nocompatible 
-set number
+set number "Line numbers 
+set ruler "Position
 
 let mapleader = ","
 let g:mapleader = ","
 nmap <leader>w :w!<cr>
 
-"cd into directory with file
-set autochdir
+set autochdir "cd into directory with file
 
-set so=7
-set wildmenu "autocomplete and fun stuff!
-set ruler "always show current pos
+set scrolloff=5 "Lines above/below cursor 
 set cmdheight=2 "shortens cmd height
 
 set backspace=eol,start,indent "backspace configuration
@@ -37,18 +39,17 @@ set mat=2 "Blink for above
 
 "No sound on errors
 set noerrorbells
-set novisualbell
 set visualbell
-set t_vb=
-set tm=500
 
-"COLOR STUFF
+"Timeout
+set timeoutlen=500
+
+"Color scheme
 syntax enable "Enable highlighting
 set guioptions-=T
 set t_Co=256
 set background=dark
 colorscheme busybee
-set nonu
 
 set encoding=utf8
 try
@@ -64,12 +65,11 @@ set shiftwidth=4
 set tabstop=4
 set smarttab
 
-set lbr
-set tw=500
+set lbr "Line break
+set tw=500 "Text wrap
 
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
+set autoindent
+set smartindent
 
 "Highlight disabling shortcut
 ca nh nohl
@@ -94,6 +94,9 @@ nnoremap k gk
 "Quick insertion of a newline by pressing enter
 nnoremap <silent> <CR> :put=''<CR>
 
+"Remap space to insert a single character
+noremap <Space> i_<Esc>r
+
 ":make runs ./compile
 set makeprg=./compile
 " = saves and compiles
@@ -112,3 +115,5 @@ match OverLength /\%81v.\+/
 filetype plugin on 
 filetype plugin indent on
 let g:pydiction_location = '~/.vim/plugin/complete-dict'
+
+"set number
