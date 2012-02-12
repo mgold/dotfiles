@@ -8,9 +8,10 @@
 "http://vimdoc.sourceforge.net/htmldoc/options.html
 
 
-set nocompatible 
+set nocompatible "Set this first or risk undoing other settings
 set number "Line numbers 
 set ruler "Position
+set showcmd "Incomplete commands
 
 let mapleader = ","
 let g:mapleader = ","
