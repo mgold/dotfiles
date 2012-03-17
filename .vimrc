@@ -1,11 +1,14 @@
 "Max Goldstein
 ".vimrc
 "
-"Taken primarily from Marshall Moutenot (mmoutenot) and Eliot Alter (ealter),
-"who took it from multiple sources scattered across the internet
+"Taken primarily from Marshall Moutenot (mmoutenot), Eliot Alter (ealter), and
+"Ben Orenstein (r00k), who took it from multiple sources across the internet 
 "
 "Documentation on set 'preference' is available at
 "http://vimdoc.sourceforge.net/htmldoc/options.html
+"
+"I've tried to separate and explain each item so you can pick things you like.
+"Copying a vimrc wholesale tends to have unpredictable side effects.
 
 
 set nocompatible "Set this first or risk undoing other settings
@@ -23,7 +26,8 @@ set scrolloff=5 "Lines above/below cursor
 set cmdheight=2 "shortens cmd height
 
 set backspace=eol,start,indent "backspace configuration
-set whichwrap+=<,>,h,l
+set whichwrap+=<,>,[,],h,l
+"Pro-tip: the arrow keys are <,> in normal mode and [,] in insert mode
 
 set ignorecase "Ignore case when searching
 set smartcase
@@ -81,19 +85,25 @@ nnoremap ; :
 "Uncomment the next line to have colon be semicolon. Otherwise they both are
 "nnoremap : ;
 
-":nonum turn off line numbers, :num restores them
+":nonum turns off line numbers, :num restores them
 ca nonum set nonumber
 ca num set number
 
-" Remap jj to escape insert mode (since you'll probably never type this)
+" Remap jj to escape insert mode (since you'll probably never need to type it)
 inoremap jj <Esc>
 
-"Make the cursor move as expected with wrapping lines
-nnoremap j gj
-nnoremap k gk
+"Disable 'Entering Ex mode. Type 'visual' to go to Normal mode.'
+map Q <Nop>
+
+"Disable F1 help. Better yet, I meant Esc anyway.
+imap <F1> <Esc>
+
+"Pasting should be at the right indent level
+map p ]p
+map P ]P
 
 "Quick insertion of a newline by pressing enter
-nnoremap <silent> <CR> :put=''<CR>
+nnoremap <silent> <CR> O<Esc>
 
 "Remap space to insert a single character
 noremap <Space> i_<Esc>r
@@ -111,10 +121,3 @@ set tw=80
 set wrap
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
-
-"Pydiction - not sure if I like it or not
-filetype plugin on 
-filetype plugin indent on
-let g:pydiction_location = '~/.vim/plugin/complete-dict'
-
-"set number
