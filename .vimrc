@@ -33,8 +33,8 @@ set ignorecase "Ignore case when searching
 set smartcase
 
 set hlsearch "Highlight searches
-
 set incsearch "more like webbrowser search
+
 set nolazyredraw "Don't redraw during macros
 
 set magic "For regular expressions
@@ -65,10 +65,10 @@ endtry
 set ffs=unix,dos,mac "Default file types
 
 "Text tab indent etc.
-set expandtab
 set shiftwidth=4
 set tabstop=4
 set smarttab
+set expandtab
 
 set lbr "Line break
 set tw=500 "Text wrap
@@ -117,7 +117,6 @@ noremap <Tab> ==
 
 "Text autowrap to 80 columns
 set textwidth=80
-set tw=80
 set wrap
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
