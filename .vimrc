@@ -116,6 +116,16 @@ nnoremap = :w<bar>:make<bar><CR>
 "Having overwritten =, assign it to Tab to align text
 noremap <Tab> ==
 
+"Avoid the arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
 "Text autowrap to 80 columns
 set textwidth=80
 set wrap
