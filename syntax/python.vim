@@ -3,5 +3,6 @@
 setlocal nowrap
 setlocal textwidth=0
 if exists('+colorcolumn')                                                                     
-  setlocal colorcolumn = 50
+  setlocal colorcolumn=1,5,9,13,17
+  highlight colorcolumn ctermbg=0
 endif

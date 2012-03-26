@@ -1,4 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/maxgoldstein/Desktop'
 let g:netrw_dirhist_2='/Users/maxgoldstein/.vim'
+let g:netrw_dirhist_3='/Users/maxgoldstein/Desktop/Facebook 4100.0/Payload/Facebook.app'
+let g:netrw_dirhist_4='/Users/maxgoldstein/Desktop/Facebook 4100.0/Payload/Facebook.app/en.lproj'
+let g:netrw_dirhist_5='/Users/maxgoldstein/Desktop/Facebook 4100.0/Payload/Facebook.app'
+let g:netrw_dirhist_6='/Users/maxgoldstein/Desktop/Facebook 4100.0/Payload/Facebook.app/_CodeSignature'
+let g:netrw_dirhist_7='/Users/maxgoldstein/.vim/plugin'
+let g:netrw_dirhist_8='/Users/maxgoldstein/.vim/autoload'
+let g:netrw_dirhist_9='/Users/maxgoldstein/.vim/doc'

@@ -10,7 +10,6 @@
 "I've tried to separate and explain each item so you can pick things you like.
 "Copying a vimrc wholesale tends to have unpredictable side effects.
 
-
 set nocompatible "Set this first or risk undoing other settings
 set number "Line numbers 
 set ruler "Position
@@ -69,6 +68,8 @@ set shiftwidth=4
 set tabstop=4
 set smarttab
 set expandtab
+"Leave Makefiles alone
+au BufRead,BufNewFile Makefile set ts=4 sw=4 noexpandtab
 
 set lbr "Line break
 set tw=500 "Text wrap
@@ -118,5 +119,9 @@ noremap <Tab> ==
 "Text autowrap to 80 columns
 set textwidth=80
 set wrap
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+if exists('+colorcolumn')
+  set colorcolumn=+1
+else
+  highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+  match OverLength /\%>81v.\+/
+endif
