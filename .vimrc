@@ -2,7 +2,7 @@
 ".vimrc
 "
 "Taken primarily from Marshall Moutenot (mmoutenot), Eliot Alter (ealter), and
-"Ben Orenstein (r00k), who took it from multiple sources across the internet 
+"Ben Orenstein (r00k), who took it from multiple sources across the internet.
 "
 "Documentation on set 'preference' is available at
 "http://vimdoc.sourceforge.net/htmldoc/options.html
@@ -108,6 +108,10 @@ nnoremap <silent> <CR> O<Esc>
 
 "Remap space to insert a single character
 noremap <Space> i_<Esc>r
+
+"I use _ more than -
+noremap - _
+noremap _ -
 
 ":make runs ./compile
 set makeprg=./compile
