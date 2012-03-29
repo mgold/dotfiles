@@ -113,22 +113,23 @@ noremap <Space> i_<Esc>r
 noremap - _
 noremap _ -
 
-":make runs ./compile
-set makeprg=./compile
-" = saves and compiles
+":make runs the Makefile, if present, else ./compile 
+"Credit http://stackoverflow.com/questions/729249
+set makeprg=[[\ -f\ Makefile\ ]]\ &&\ make\ \\\|\\\|\ ./compile
+" = saves and compiles (runs make)
 nnoremap = :w<bar>:make<bar><CR>
 "Having overwritten =, assign it to Tab to align text
 noremap <Tab> ==
 
-"Avoid the arrow keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
+"Avoid the arrow keys - masochistic training
+nnoremap <up>    <nop>
+nnoremap <down>  <nop>
+nnoremap <left>  <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+"inoremap <up>    <nop>
+"inoremap <down>  <nop>
+"inoremap <left>  <nop>
+"inoremap <right> <nop>
 
 "Text autowrap to 80 columns
 set textwidth=80
