@@ -115,7 +115,7 @@ noremap _ -
 
 ":make runs the Makefile, if present, else ./compile 
 "Credit http://stackoverflow.com/questions/729249
-set makeprg=[[\ -f\ Makefile\ ]]\ &&\ make\ \\\|\\\|\ ./compile
+set makeprg=[[\ -f\ Makefile\ ]]\ &&\ ./Makefile\ \\\|\\\|\ [[\ -f\ compile\ ]]\ &&\ ./compile
 " = saves and compiles (runs make)
 nnoremap = :w<bar>:make<bar><CR>
 "Having overwritten =, assign it to Tab to align text
