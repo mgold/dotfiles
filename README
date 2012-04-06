@@ -2,4 +2,6 @@ Max Goldstein - .vim directory
 
 This folder contains the .vimrc configuration and my color scheme of choice (busybee.vim).
 
-There is a symbolic link in my home folder to the .vimrc here. Create one using: cd;rm .vimrc;ln -s .vim/.vimrc .vimrc
+There is a symbolic link in my home folder to the .vimrc here. If you're willing to wipeout your exising vim configuration and replace it with mine, use 
+cd;rm -rf .vim;git clone git://github.com/mgold/.vim.git;rm .vimrc;ln -s .vim/.vimrc .vimrc
+
