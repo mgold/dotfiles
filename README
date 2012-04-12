@@ -2,6 +2,25 @@ Max Goldstein - .vim directory
 
 This folder contains the .vimrc configuration and my color scheme of choice (busybee.vim).
 
+Features of the .vimrc:
+* Expand tabs to four spaces
+* Highlight and wrap lines longer than 80 characters
+* One keystroke save and compile: = runs make if a Makefile is present, otherwise runs ./compile
+* Tab mapped to auto-format (works best with C-like {}s)
+* Sensible cursor movement around the ends of lines
+* Save a shift: swap ; and :, _ and -
+* jj enters normal mode from insert mode  
+* Disable arrow keys in normal mode, to force the use of hjkl
+* Spacebar inserts one character and then return to normal mode
+* Enter makes a newline
+* Disable annoying keys you'll never mean to strike
+
+Python-specific (.py files only):
+* Dark columns every four spaces help align code (Vim 7.3+ only)
+* Tab indents line; Shift-tab unindents
+* No text wrap
+* Save and run the current file with = (unless it can run ./compile)
+
 There is a symbolic link in my home folder to the .vimrc here. If you're willing to wipeout your exising vim configuration and replace it with mine, use 
 cd;rm -rf .vim;git clone git://github.com/mgold/.vim.git;rm .vimrc;ln -s .vim/.vimrc .vimrc
 

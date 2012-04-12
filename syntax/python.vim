@@ -1,5 +1,7 @@
 "Specific configuration for Python. No 80 column limit here.
 
+noremap <Tab> >>
+noremap <S-Tab> <<
 setlocal nowrap
 setlocal textwidth=0
 if exists('+colorcolumn')                                                                     

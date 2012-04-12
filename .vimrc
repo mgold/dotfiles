@@ -77,6 +77,8 @@ set tw=500 "Text wrap
 set autoindent
 set smartindent
 
+"End set statements. Begin remapping.
+
 "Highlight disabling shortcut
 ca nh nohl
 
@@ -84,7 +86,7 @@ ca nh nohl
 cnoremap ; :
 nnoremap ; :
 "Uncomment the next line to have colon be semicolon. Otherwise they both are
-"nnoremap : ;
+nnoremap : ;
 
 ":nonum turns off line numbers, :num restores them
 ca nonum set nonumber
@@ -109,7 +111,10 @@ nnoremap <silent> <CR> O<Esc>
 "Remap space to insert a single character
 noremap <Space> i_<Esc>r
 
-"I use _ more than -
+"Y yanks to the end of the line, rather than the whole line (use yy)
+noremap Y y$
+
+"End of this line more important than end of previous line
 noremap - _
 noremap _ -
 
