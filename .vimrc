@@ -98,6 +98,9 @@ inoremap jj <Esc>
 "Disable 'Entering Ex mode. Type 'visual' to go to Normal mode.'
 map Q <Nop>
 
+"Disable K looking things up
+map K <Nop>
+
 "Disable F1 help. Better yet, I meant Esc anyway.
 imap <F1> <Esc>
 
@@ -136,6 +139,9 @@ nnoremap <right> <nop>
 "inoremap <down>  <nop>
 "inoremap <left>  <nop>
 "inoremap <right> <nop>
+
+filetype on
+autocmd BufEnter *.txt setlocal ft=txt
 
 "Text autowrap to 80 columns
 set textwidth=80
