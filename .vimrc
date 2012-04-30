@@ -128,7 +128,7 @@ set makeprg=[[\ -f\ Makefile\ ]]\ &&\ make\ \\\|\\\|\ ./compile
 " = saves and compiles (runs make)
 nnoremap = :w<bar>:make<bar><CR>
 "Having overwritten =, assign it to Tab to align text
-noremap <Tab> ==
+noremap <Tab> =
 
 "Avoid the arrow keys - masochistic training
 nnoremap <up>    <nop>
