@@ -125,8 +125,8 @@ noremap _ -
 "Credit http://stackoverflow.com/questions/729249
 set shell=/bin/bash
 set makeprg=[[\ -f\ Makefile\ ]]\ &&\ make\ \\\|\\\|\ ./compile
-" = saves and compiles (runs make)
-nnoremap = :w<bar>:make<bar><CR>
+" = saves all and compiles (runs make)
+nnoremap = :wa<bar>:make<bar><CR>
 "Having overwritten =, assign it to Tab to align text
 noremap <Tab> =
 
