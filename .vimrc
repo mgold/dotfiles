@@ -77,6 +77,9 @@ set tw=500 "Text wrap
 set autoindent
 set smartindent
 
+"See your spaces
+set list listchars=tab:\ \ ,trail:·
+
 "End set statements. Begin remapping.
 
 "Highlight disabling shortcut
@@ -87,6 +90,7 @@ cnoremap ; :
 nnoremap ; :
 "Uncomment the next line to have colon be semicolon. Otherwise they both are
 nnoremap : ;
+cnoremap : ;
 
 ":nonum turns off line numbers, :num restores them
 ca nonum set nonumber
@@ -129,6 +133,10 @@ set makeprg=[[\ -f\ Makefile\ ]]\ &&\ make\ \\\|\\\|\ ./compile
 nnoremap = :wa<bar>:make<bar><CR>
 "Having overwritten =, assign it to Tab to align text
 noremap <Tab> =
+
+"The open command is Mac-sepcific. On Linux, use xpdf.
+autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ open\ %:r.pdf
+autocmd BufNewFile,BufRead *.R set makeprg=R\ CMD\ BATCH\ %\ &&\ open\ Rplots.pdf
 
 "Avoid the arrow keys - masochistic training
 nnoremap <up>    <nop>
