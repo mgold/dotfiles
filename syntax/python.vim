@@ -4,9 +4,9 @@ noremap <Tab> >
 noremap <S-Tab> <
 setlocal nowrap
 setlocal textwidth=0
-if exists('+colorcolumn')                                                                     
+if exists('+colorcolumn')
   setlocal colorcolumn=1,5,9,13,17
-  highlight colorcolumn ctermbg=0
+  highlight colorcolumn ctermbg=234
 else
   match Overlength /^a/    
 endif
