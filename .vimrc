@@ -137,7 +137,7 @@ noremap <Tab> =
 "The open command is Mac-sepcific. On Linux, use xpdf or evince.
 autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ open\ %:r.pdf
 autocmd BufNewFile,BufRead *.R set makeprg=R\ CMD\ BATCH\ %\ &&\ open\ Rplots.pdf
-" processing-java can be installed from the Tools menu in the Max processing GUI.
+" processing-java can be installed from the Tools menu in the Mac processing GUI.
 " Requires there to be a file with the same name as the directory.
 autocmd BufNewFile,BufRead *.pde set makeprg=mkdir\ -p\ ./output\ &&\ processing-java\ --sketch=\"`pwd`\"\ --output=\"`pwd`\"/output\ --run\ --force
 autocmd BufNewFile,BufRead *.pde setf processing
