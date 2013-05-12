@@ -5,6 +5,8 @@ setlocal nolist
 setlocal textwidth=0
 setlocal formatprg=par
 
+setlocal makeprg=wc\ -w\ %
+
 nnoremap j gj
 nnoremap k gk
 
