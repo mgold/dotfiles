@@ -141,6 +141,14 @@ autocmd BufNewFile,BufRead *.R set makeprg=R\ CMD\ BATCH\ %\ &&\ open\ Rplots.pd
 " Requires there to be a file with the same name as the directory.
 autocmd BufNewFile,BufRead *.pde set makeprg=mkdir\ -p\ ./output\ &&\ processing-java\ --sketch=\"`pwd`\"\ --output=\"`pwd`\"/output\ --run\ --force
 autocmd BufNewFile,BufRead *.pde setf processing
+autocmd BufNewFile,BufRead *.ino setf processing
+autocmd BufNewFile,BufRead *.elm setf elm
+" open can also open the webbrowser.
+autocmd BufNewFile,BufRead *.elm set makeprg=open\ 'http://localhost:8000/%'\ &&\ elm-server
+" assumes the markdown program exists on your path
+autocmd BufNewFile,BufRead *.md set makeprg=markdown\ %
+autocmd BufNewFile,BufRead *.rb set makeprg=ruby\ %
+
 
 "Avoid the arrow keys - masochistic training
 nnoremap <up>    <nop>
