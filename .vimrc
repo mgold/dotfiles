@@ -80,6 +80,9 @@ set smartindent
 "See your spaces
 set list listchars=tab:\ \ ,trail:·
 
+"Only one space after a period
+set nojoinspaces
+
 "End set statements. Begin remapping.
 
 "Highlight disabling shortcut
@@ -145,8 +148,8 @@ autocmd BufNewFile,BufRead *.ino setf processing
 autocmd BufNewFile,BufRead *.elm setf elm
 " open can also open the webbrowser.
 autocmd BufNewFile,BufRead *.elm set makeprg=open\ 'http://localhost:8000/%'\ &&\ elm-server
-" assumes the markdown program exists on your path
-autocmd BufNewFile,BufRead *.md set makeprg=markdown\ %
+" assumes pandoc is installed
+autocmd BufNewFile,BufRead *.md set makeprg=pandoc\ %\ -o\ %:r.pdf\ &&\ open\ %:r.pdf
 autocmd BufNewFile,BufRead *.rb set makeprg=ruby\ %
 
 
