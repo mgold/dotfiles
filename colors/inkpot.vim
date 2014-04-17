@@ -153,7 +153,7 @@ else
         exec "hi Normal         cterm=NONE   ctermfg=" . <SID>X(79) . " ctermbg=" . <SID>X(16)
     endif
 
-    exec "hi IncSearch      cterm=NONE   ctermfg=" . <SID>X(80) . " ctermbg=226"
+    exec "hi IncSearch      cterm=NONE   ctermfg=" . <SID>X(80) . " ctermbg=223"
     exec "hi Search         cterm=NONE   ctermfg=" . <SID>X(80) . " ctermbg=227"
     exec "hi ErrorMsg       cterm=BOLD   ctermfg=" . <SID>X(16) . " ctermbg=161"
     exec "hi WarningMsg     cterm=BOLD   ctermfg=" . <SID>X(16) . " ctermbg=" . <SID>X(68)
