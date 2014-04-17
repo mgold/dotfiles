@@ -9,7 +9,7 @@ if exists("b:current_syntax")
 endif
 
 " Keywords
-syn keyword elmKeyword as case class data default deriving do else export foreign
+syn keyword elmKeyword as case class data default deriving do else export port
 syn keyword elmKeyword hiding jsevent if import in infix infixl infixr instance let
 syn keyword elmKeyword module newtype of then type where _
 
@@ -52,8 +52,6 @@ syn keyword elmCoreLibrary List Time Collage Form Prelude Random Signal Http Set
 
 " Library functions
 
-" Automaton
-syn keyword elmBuiltinFunction run step (>>>) (<<<) combine pure state hiddenState count average
 " Char
 syn keyword elmBuiltinFunction isUpper isLower isDigit isOctDigit isHexDigit toUpper toLower toLocaleUpper toLocaleLower toCode fromCode
 " Color
@@ -87,11 +85,11 @@ syn keyword elmBuiltinFunction identity matrix rotation multiply
 " Maybe
 syn keyword elmBuiltinFunction maybe isJust isNothing cons justs
 " Mouse
-syn keyword elmBuiltinFunction position x y isDown isClicked clicks
+syn keyword elmBuiltinFunction position isDown clicks
 " Prelude
-syn keyword elmBuiltinFunction radians degrees turns fromPolar toPolar (+) (-) (*) (/) div rem mod (^) cos sin tan acos asin atan atan2 sqrt abs logBase min max clamp pi e (<) (>) compare (&&) (||) xor not otherwise round truncate floor ceiling toFloat show readInt readFloat (.) (|>) (<|) id fst snd flip curry uncurry
+syn keyword elmBuiltinFunction radians degrees turns fromPolar toPolar (+) (-) (*) (/) div rem mod (^) cos sin tan acos asin atan atan2 sqrt abs logBase min max clamp pi e (<) (>) compare (&&) (||) xor not otherwise round truncate floor ceiling toFloat show readInt readFloat (.) (|>) (<|) id fst snd flip curry uncurry always
 " Random
-syn keyword elmBuiltinFunction range float
+syn keyword elmBuiltinFunction range float floatList
 " Set
 syn keyword elmBuiltinFunction empty singleton insert remove member union intersect diff toList fromList foldl foldr map
 " Signal

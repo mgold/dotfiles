@@ -1,1 +1,1 @@
-set makeprg=ghc\ %<.hs\ &&\ ./%<
+set makeprg=ghci\ %
