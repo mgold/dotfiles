@@ -29,6 +29,11 @@ Features of the .vimrc:
 * Always show line numbers, or toggle with shortcuts :num and :nonum
 * Disable annoying keys you'll never mean to strike
 
+###Ruby-specific (.rb files only):
+* Ruby style two space indents, and color columns
+* No text wrap
+* = runs rspec on the current file if it in a rspec file (thanks [vim-rspec](https://github.com/thoughtbot/vim-rspec))
+
 ###Python-specific (.py files only):
 * Dark columns every four spaces help align code (Vim 7.3+ only)
 * Tab indents line; Shift-tab unindents
@@ -39,7 +44,15 @@ Features of the .vimrc:
 There is a symbolic link in my home folder to the .vimrc here. If you're willing
 to wipeout your existing vim configuration and replace it with mine, use this
 command:
-`cd;rm -rf .vim;git clone git://github.com/mgold/.vim.git;rm .vimrc;ln -s .vim/.vimrc .vimrc`
+`cd;rm -rf .vim;git clone git://github.com/mgold/.vim.git;rm -f .vimrc;ln -s .vim/.vimrc .vimrc`
+
+Important Note On Color Scheme
+-----------------------------
+The vim color scheme used is Solarized. If you are in a terminal (not macvim), it will look horrible
+unless you do one of two things:
+* Add this line to the `.vimrc` _before_ `colorscheme solarized`: `let g:solarized_termcolors=256`
+* Download, install, and use the terminal color scheme ([Mac OSX Terminal](https://github.com/tomislav/osx-terminal.app-colors-solarized), [iTerm 2](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized))
+Or, you know, change to a different color scheme. Inkpot maybe.
 
 Resources to learn Vim:
 -----------------------

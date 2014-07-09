@@ -53,7 +53,7 @@ syntax enable "Enable highlighting
 set guioptions-=T
 set t_Co=256
 set background=dark
-colorscheme inkpot
+colorscheme solarized
 
 set encoding=utf8
 try
@@ -76,6 +76,7 @@ set tw=500 "Text wrap
 
 set autoindent
 set smartindent
+filetype indent on
 
 "See your spaces
 set list listchars=tab:\ \ ,trail:·
