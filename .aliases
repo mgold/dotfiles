@@ -1,0 +1,21 @@
+bind '"[A":history-search-backward'
+
+alias ls='ls -la'
+alias v="vi"
+alias b="bundle"
+
+alias gb='git branch'
+alias gc='git checkout'
+alias gcb='git checkout -b'
+alias gm='git commit -m'
+alias gma='git commit -a -m'
+alias ga='git add'
+alias gau='git add -u :/'
+alias gs='git status'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias grm='git rm'
+alias gpush='git push -u'
+alias gpull='git pull'
+alias gr='git root'
+alias gg='git grep'
