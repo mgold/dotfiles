@@ -86,9 +86,6 @@ set nojoinspaces
 
 "End set statements. Begin remapping.
 
-"Highlight disabling shortcut
-ca nh nohl
-
 "In Normal mode, semicolon brings up colon prompt
 cnoremap ; :
 nnoremap ; :
@@ -96,9 +93,11 @@ nnoremap ; :
 nnoremap : ;
 cnoremap : ;
 
-":nonum turns off line numbers, :num restores them
-ca nonum set nonumber
-ca num set number
+" :num! toggles linenumbers
+cmap num number
+
+"Highlight disabling shortcut
+cmap nh nohl
 
 " Remap jj to escape insert mode (since you'll probably never need to type it)
 inoremap jj <Esc>
@@ -129,7 +128,7 @@ noremap Y y$
 noremap - _
 noremap _ -
 
-":make runs the Makefile, if present, else ./compile 
+":make runs the Makefile, if present, else ./compile
 "Credit http://stackoverflow.com/questions/729249
 set shell=/bin/bash
 set makeprg=[[\ -f\ Makefile\ ]]\ &&\ make\ \\\|\\\|\ ./compile
