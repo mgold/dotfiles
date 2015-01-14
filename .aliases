@@ -7,6 +7,7 @@ alias gca='git commit --amend'
 alias ga='git add'
 alias gau='git add -u :/'
 alias gs='git status'
+alias gsu='git submodule update'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gdh='git diff HEAD^'
@@ -22,5 +23,6 @@ alias ls='ls -la'
 alias v="vim"
 
 alias b="bundle"
+alias r="rails"
 
 bind '"[A":history-search-backward'
