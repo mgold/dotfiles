@@ -171,8 +171,8 @@ nnoremap <right> <nop>
 filetype on
 autocmd BufEnter *.txt setlocal ft=txt
 
-"Text autowrap to 80 columns
-set textwidth=80
+"Text autowrap to 120 columns
+set textwidth=120
 set wrap
 if exists('+colorcolumn')
   set colorcolumn=+1
