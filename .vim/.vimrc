@@ -147,9 +147,13 @@ autocmd BufNewFile,BufRead *.pde setf processing
 autocmd BufNewFile,BufRead *.ino setf processing
 autocmd BufNewFile,BufRead *.elm setf elm
 " open can also open the webbrowser.
-autocmd BufNewFile,BufRead *.elm set makeprg=open\ 'http://localhost:8000/%'\ &&\ elm-server
+autocmd BufNewFile,BufRead *.elm set makeprg=elm-make
+autocmd BufNewFile,BufRead *.md setf markdown
+autocmd BufNewFile,BufRead *.md set ft=markdown " above line not working?
+autocmd BufNewFile,BufRead *.md set spell
 " assumes pandoc is installed
 autocmd BufNewFile,BufRead *.md set makeprg=pandoc\ %\ -o\ %:r.pdf\ &&\ open\ %:r.pdf
+autocmd BufNewFile,BufRead *.md set textwidth=0
 autocmd BufNewFile,BufRead *.rb set makeprg=ruby\ %
 
 
@@ -166,8 +170,8 @@ nnoremap <right> <nop>
 filetype on
 autocmd BufEnter *.txt setlocal ft=txt
 
-"Text autowrap to 80 columns
-set textwidth=80
+"Text autowrap to 120 columns
+set textwidth=120
 set wrap
 if exists('+colorcolumn')
   set colorcolumn=+1
