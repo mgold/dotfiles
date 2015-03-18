@@ -1,6 +1,7 @@
 alias gb='git branch'
 alias gc='git checkout'
 alias gcb='git checkout -b'
+alias gcm='git checkout master'
 alias gm='git commit -m'
 alias gma='git commit -a -m'
 alias gca='git commit --amend'
