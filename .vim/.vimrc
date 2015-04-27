@@ -53,6 +53,7 @@ syntax enable "Enable highlighting
 set guioptions-=T
 set t_Co=256
 set background=dark
+"let g:solarized_termcolors=256
 colorscheme solarized
 
 set encoding=utf8

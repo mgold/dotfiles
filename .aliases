@@ -24,6 +24,7 @@ alias ls='ls -la'
 alias v="vim"
 
 alias b="bundle"
+alias be="bundle exec"
 alias r="rails"
 
 bind '"[A":history-search-backward'
