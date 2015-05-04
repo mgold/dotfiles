@@ -6,4 +6,3 @@ if exists('+colorcolumn')
 endif
 "hotkey for inserting binding.pry
 noremap K Obinding.pry<Esc>j
-noremap = :call RunCurrentSpecFile()<CR>

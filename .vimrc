@@ -11,7 +11,7 @@
 "Copying a vimrc wholesale tends to have unpredictable side effects.
 
 set nocompatible "Set this first or risk undoing other settings
-set number "Line numbers 
+set number "Line numbers
 set ruler "Position
 set showcmd "Incomplete commands
 
@@ -21,7 +21,7 @@ nmap <leader>w :w!<cr>
 
 set autochdir "cd into directory with file
 
-set scrolloff=5 "Lines above/below cursor 
+set scrolloff=5 "Lines above/below cursor
 set cmdheight=2 "shortens cmd height
 
 set backspace=eol,start,indent "backspace configuration
@@ -69,8 +69,9 @@ set shiftwidth=4
 set tabstop=4
 set smarttab
 set expandtab
-"Leave Makefiles alone
+"Leave tab-sensitive files alone
 au BufRead,BufNewFile Makefile set ts=4 sw=4 noexpandtab
+au BufRead,BufNewFile .gitconfig set ts=4 sw=4 noexpandtab
 
 set lbr "Line break
 set tw=500 "Text wrap
@@ -148,7 +149,7 @@ autocmd BufNewFile,BufRead *.pde setf processing
 autocmd BufNewFile,BufRead *.ino setf processing
 autocmd BufNewFile,BufRead *.elm setf elm
 " open can also open the webbrowser.
-autocmd BufNewFile,BufRead *.elm set makeprg=elm-make
+autocmd BufNewFile,BufRead *.elm set makeprg=ElmMakeCurrentFile
 autocmd BufNewFile,BufRead *.md setf markdown
 autocmd BufNewFile,BufRead *.md set ft=markdown " above line not working?
 autocmd BufNewFile,BufRead *.md set spell
