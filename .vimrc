@@ -104,8 +104,9 @@ cmap nh nohl
 " Remap jj to escape insert mode (since you'll probably never need to type it)
 inoremap jj <Esc>
 
-"Disable 'Entering Ex mode. Type 'visual' to go to Normal mode.'
-map Q <Nop>
+"Disable 'Entering Ex mode. Type 'visual' to go to Normal mode.' and map it to text formatiing
+map Q gq
+map gQ <Nop>
 
 "Disable K looking things up
 map K <Nop>
