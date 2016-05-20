@@ -12,16 +12,22 @@ alias gsu='git submodule update'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gdh='git diff HEAD^'
+alias gdm='git diff master'
 alias grm='git rm'
 alias gr='git remote'
 alias grpo='git remote prune origin'
 alias gpush='git push -u'
 alias gpull='git pull'
 alias gfp='git fetch -p'
-alias gg='git grep'
+alias gg='git grep -I'
+alias gt='git tag'
 
-alias ls='ls -la'
+alias ls='ls -laF'
 alias v="vim"
+mcdir () {
+    mkdir -p "$1"
+    cd "$1"
+}
 
 alias b="bundle"
 alias be="bundle exec"

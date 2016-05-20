@@ -65,8 +65,8 @@ endtry
 set ffs=unix,dos,mac "Default file types
 
 "Text tab indent etc.
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set smarttab
 set expandtab
 "Leave tab-sensitive files alone
@@ -148,14 +148,18 @@ autocmd BufNewFile,BufRead *.pde set makeprg=mkdir\ -p\ ./output\ &&\ processing
 autocmd BufNewFile,BufRead *.pde setf processing
 autocmd BufNewFile,BufRead *.ino setf processing
 autocmd BufNewFile,BufRead *.elm setf elm
+augroup format_elm " {
+    autocmd BufWritePost *.elm silent execute "!elm-format --yes %" | edit! | redraw!| setlocal ft=elm
+augroup END " }
 " open can also open the webbrowser.
-autocmd BufNewFile,BufRead *.elm set makeprg=ElmMakeCurrentFile
+"autocmd BufNewFile,BufRead *.elm set makeprg=elm-make
 autocmd BufNewFile,BufRead *.md setf markdown
 autocmd BufNewFile,BufRead *.md set ft=markdown " above line not working?
+autocmd BufNewFile,BufRead *.md set textwidth=120
+autocmd BufNewFile,BufRead *.md set colorcolumn=121
 autocmd BufNewFile,BufRead *.md set spell
 " assumes pandoc is installed
 autocmd BufNewFile,BufRead *.md set makeprg=pandoc\ %\ -o\ %:r.pdf\ &&\ open\ %:r.pdf
-autocmd BufNewFile,BufRead *.md set textwidth=0
 autocmd BufNewFile,BufRead *.rb set makeprg=ruby\ %
 
 
