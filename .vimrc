@@ -11,13 +11,47 @@
 "Copying a vimrc wholesale tends to have unpredictable side effects.
 
 set nocompatible "Set this first or risk undoing other settings
+filetype off "Required for Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'SyntaxAttr.vim'
+
+Plugin 'Valloric/MatchTagAlways' "HTML tag highlighting
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-bundler'
+Plugin 'pangloss/vim-javascript'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'lambdatoast/elm.vim'
+
+Plugin 'vim-coffee-script'
+Plugin 'mustache/vim-mustache-handlebars'
+
+call vundle#end()
+filetype plugin indent on
+
+" Must remap leader before mapping any leader commands
+let mapleader = ","
+let g:mapleader = ","
+
+" Redefined to include handlebars
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'html.handlebars' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \}
+nnoremap <leader>% :MtaJumpToOtherTag<cr>
+
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+
 set number "Line numbers
 set ruler "Position
 set showcmd "Incomplete commands
-
-let mapleader = ","
-let g:mapleader = ","
-nmap <leader>w :w!<cr>
 
 set autochdir "cd into directory with file
 
@@ -52,9 +86,7 @@ set timeoutlen=500
 syntax enable "Enable highlighting
 set guioptions-=T
 set t_Co=256
-set background=dark
-"let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme busybee
 
 set encoding=utf8
 try
@@ -65,16 +97,13 @@ endtry
 set ffs=unix,dos,mac "Default file types
 
 "Text tab indent etc.
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 set smarttab
 set expandtab
 "Leave tab-sensitive files alone
 au BufRead,BufNewFile Makefile set ts=4 sw=4 noexpandtab
 au BufRead,BufNewFile .gitconfig set ts=4 sw=4 noexpandtab
-
-set lbr "Line break
-set tw=500 "Text wrap
 
 set autoindent
 set smartindent
@@ -88,12 +117,9 @@ set nojoinspaces
 
 "End set statements. Begin remapping.
 
-"In Normal mode, semicolon brings up colon prompt
-cnoremap ; :
+"In Normal mode, swap colon (prompt) and semicolon (repeat search)
 nnoremap ; :
-"Uncomment the next line to have colon be semicolon. Otherwise they both are
 nnoremap : ;
-cnoremap : ;
 
 " :num! toggles linenumbers
 cmap num number
@@ -101,11 +127,16 @@ cmap num number
 "Highlight disabling shortcut
 cmap nh nohl
 
+" Line up/down do wrapped lines
+nnoremap j gj
+nnoremap k gk
+
 " Remap jj to escape insert mode (since you'll probably never need to type it)
 inoremap jj <Esc>
 
-"Disable 'Entering Ex mode. Type 'visual' to go to Normal mode.'
-map Q <Nop>
+"Disable 'Entering Ex mode. Type 'visual' to go to Normal mode.' and map it to text formatiing
+map Q gq
+map gQ <Nop>
 
 "Disable K looking things up
 map K <Nop>
@@ -118,7 +149,7 @@ map p ]p
 map P ]P
 
 "Quick insertion of a newline by pressing enter
-nnoremap <silent> <CR> O<Esc>
+nnoremap <silent> <CR> jO<Esc>
 
 "Remap space to insert a single character
 noremap <Space> i_<Esc>r
@@ -148,19 +179,14 @@ autocmd BufNewFile,BufRead *.pde set makeprg=mkdir\ -p\ ./output\ &&\ processing
 autocmd BufNewFile,BufRead *.pde setf processing
 autocmd BufNewFile,BufRead *.ino setf processing
 autocmd BufNewFile,BufRead *.elm setf elm
-augroup format_elm " {
-    autocmd BufWritePost *.elm silent execute "!elm-format --yes %" | edit! | redraw!| setlocal ft=elm
-augroup END " }
 " open can also open the webbrowser.
-"autocmd BufNewFile,BufRead *.elm set makeprg=elm-make
 autocmd BufNewFile,BufRead *.md setf markdown
 autocmd BufNewFile,BufRead *.md set ft=markdown " above line not working?
-autocmd BufNewFile,BufRead *.md set textwidth=120
-autocmd BufNewFile,BufRead *.md set colorcolumn=121
 autocmd BufNewFile,BufRead *.md set spell
 " assumes pandoc is installed
 autocmd BufNewFile,BufRead *.md set makeprg=pandoc\ %\ -o\ %:r.pdf\ &&\ open\ %:r.pdf
-autocmd BufNewFile,BufRead *.rb set makeprg=ruby\ %
+autocmd BufNewFile,BufRead *.md set textwidth=0
+autocmd BufEnter *.txt setlocal ft=txt
 
 
 "Avoid the arrow keys - masochistic training
@@ -173,12 +199,10 @@ nnoremap <right> <nop>
 "inoremap <left>  <nop>
 "inoremap <right> <nop>
 
-filetype on
-autocmd BufEnter *.txt setlocal ft=txt
-
 "Text autowrap to 120 columns
 set textwidth=120
 set wrap
+set linebreak
 if exists('+colorcolumn')
   set colorcolumn=+1
 else
