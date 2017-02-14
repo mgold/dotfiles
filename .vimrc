@@ -18,12 +18,15 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'SyntaxAttr.vim'
 
+" Install with :PluginInstall
 Plugin 'Valloric/MatchTagAlways' "HTML tag highlighting
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'lambdatoast/elm.vim'
+Plugin 'elmcast/elm-vim'
 
 Plugin 'vim-coffee-script'
 Plugin 'mustache/vim-mustache-handlebars'
@@ -32,8 +35,8 @@ call vundle#end()
 filetype plugin indent on
 
 " Must remap leader before mapping any leader commands
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = " "
+let g:mapleader = " "
 
 " Redefined to include handlebars
 let g:mta_filetypes = {
@@ -48,6 +51,8 @@ nnoremap <leader>% :MtaJumpToOtherTag<cr>
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
+
+let g:elm_format_autosave = 1
 
 set number "Line numbers
 set ruler "Position
@@ -71,9 +76,6 @@ set incsearch "more like webbrowser search
 set nolazyredraw "Don't redraw during macros
 
 set magic "For regular expressions
-
-set showmatch "Matching braces highlighting
-set mat=2 "Blink for above
 
 "No sound on errors
 set noerrorbells
@@ -121,6 +123,9 @@ set nojoinspaces
 nnoremap ; :
 nnoremap : ;
 
+" Make S the split modifier. Use cc to replace a line.
+nnoremap S <C-W>
+
 " :num! toggles linenumbers
 cmap num number
 
@@ -130,9 +135,6 @@ cmap nh nohl
 " Line up/down do wrapped lines
 nnoremap j gj
 nnoremap k gk
-
-" Remap jj to escape insert mode (since you'll probably never need to type it)
-inoremap jj <Esc>
 
 "Disable 'Entering Ex mode. Type 'visual' to go to Normal mode.' and map it to text formatiing
 map Q gq
@@ -150,9 +152,6 @@ map P ]P
 
 "Quick insertion of a newline by pressing enter
 nnoremap <silent> <CR> jO<Esc>
-
-"Remap space to insert a single character
-noremap <Space> i_<Esc>r
 
 "Y yanks to the end of the line, rather than the whole line (use yy)
 noremap Y y$
@@ -182,7 +181,7 @@ autocmd BufNewFile,BufRead *.elm setf elm
 " open can also open the webbrowser.
 autocmd BufNewFile,BufRead *.md setf markdown
 autocmd BufNewFile,BufRead *.md set ft=markdown " above line not working?
-autocmd BufNewFile,BufRead *.md set spell
+"autocmd BufNewFile,BufRead *.md set spell
 " assumes pandoc is installed
 autocmd BufNewFile,BufRead *.md set makeprg=pandoc\ %\ -o\ %:r.pdf\ &&\ open\ %:r.pdf
 autocmd BufNewFile,BufRead *.md set textwidth=0
