@@ -1,0 +1,12 @@
+source .gitaliases
+
+alias v='vim'
+alias ls='ls -laF'
+mcdir () {
+    mkdir -p "$1"
+    cd "$1"
+}
+alias gaml='yq eval --output-format=props'
+alias p='pnpm'
+alias pi='pnpm i'
+

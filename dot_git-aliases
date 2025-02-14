@@ -1,0 +1,58 @@
+# shell aliases
+alias v='vim'
+alias ls='ls -laF'
+mcdir () {
+    mkdir -p "$1"
+    cd "$1"
+}
+alias gaml='yq eval --output-format=props'
+alias p='pnpm'
+alias pi='pnpm i'
+
+alias cdgr='cd $(git rev-parse --show-toplevel)' # cd git root
+
+alias gb='git branch'
+# [alias]
+#    br = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+alias gbr='git br'
+alias gc='git checkout'
+alias gcb='git checkout -b'
+alias gcm='git checkout main'
+alias gcp='git cherry-pick'
+gm () {
+    # If given an argument, use it as the commit message, otherwise open the editor
+    [[ -n $1 ]] && git commit -m "$1" || git commit
+}
+alias gca='git commit --amend'
+alias ga='git add'
+alias gau='git add -u :/'
+alias gs='git status'
+alias gsh='git show'
+alias gd='git diff'
+alias gdw='git diff -w'
+alias gds='git diff --staged'
+alias gdh='git diff HEAD^'
+alias gdm='git diff main'
+alias gdwd='git diff --word-diff'
+alias gsu='git submodule update --recursive'
+alias grs='git reset'
+alias grsh='git reset --hard'
+alias grsH='git reset HEAD'
+alias grshm='git reset --hard main'
+alias grm='git rm'
+alias gr='git remote'
+alias grpo='git remote prune origin'
+alias gpush='git push -u'
+alias gpushf='git push --force-with-lease'
+alias gpull='git pull'
+alias gfp='git fetch -p'
+alias gg='git grep --line-number'
+alias ggi='git grep -i --line-number'
+alias grb='git rebase'
+alias grbi='git rebase -i'
+alias grbm='git rebase main'
+alias grbim='git rebase -i main'
+alias grbc='git rebase --continue'
+alias grbs='git rebase --skip'
+# git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glg='git lg'

@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/Users/maxgoldstein/Documents/Code/descript-ai-workers'
+let g:netrw_dirhist_2='/Users/maxgoldstein/Documents/Code/server-infrastructure'
+let g:netrw_dirhist_1='/Users/maxgoldstein/Documents/Code/descript-workflows'

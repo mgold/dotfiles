@@ -1,0 +1,129 @@
+
+set nocompatible "Set this first or risk undoing other settings
+
+set title titlestring= " Don't put junk in the window name
+
+set number "Line numbers
+set ruler "Cursor position in bottom right
+set showcmd "Show commands as they are typed
+
+set autochdir "cd into directory with file
+
+set scrolloff=5 "Lines above/below cursor
+set cmdheight=2 "shortens cmd height
+
+set backspace=eol,start,indent "backspace configuration
+set whichwrap+=<,>,[,],h,l
+"Pro-tip: the arrow keys are <,> in normal mode and [,] in insert mode
+
+set ignorecase "Ignore case when searching
+set smartcase
+
+set hlsearch "Highlight searches
+set incsearch "more like webbrowser search
+
+set nolazyredraw "Don't redraw during macros
+
+set magic "For regular expressions
+
+set showmatch "Matching braces highlighting
+set mat=2 "Blink for above
+
+"No sound on errors
+set noerrorbells
+set visualbell
+
+"Timeout
+set timeoutlen=500
+
+"Color scheme
+syntax enable "Enable highlighting
+set guioptions-=T
+set t_Co=256
+colorscheme jellybeans "busybee
+
+set encoding=utf8
+try
+  lang en_US
+catch
+endtry
+
+set ffs=unix,dos,mac "Default file types
+
+"Text tab indent etc.
+set shiftwidth=4
+set tabstop=4
+set smarttab
+set expandtab
+"Leave tab-sensitive files alone
+au BufRead,BufNewFile Makefile set ts=4 sw=4 noexpandtab
+au BufRead,BufNewFile .gitconfig set ts=4 sw=4 noexpandtab
+au BufRead,BufNewFile .py set ts=4 sw=4 noexpandtab
+
+set lbr "Line break
+set tw=500 "Text wrap
+
+set autoindent
+set smartindent
+filetype indent on
+
+"See your spaces
+set list listchars=tab:\ \ ,trail:·
+
+"Only one space after a period
+set nojoinspaces
+
+" gitgutter should update quickly
+set updatetime=100
+
+"End set statements. Begin remapping.
+
+"In Normal mode, swap colon (prompt) and semicolon (repeat search)
+nnoremap ; :
+nnoremap : ;
+
+" :num! toggles linenumbers
+cmap num number
+
+"Highlight disabling shortcut
+cmap nh nohl
+
+" Remap jj to escape insert mode (since you'll probably never need to type it)
+inoremap jj <Esc>
+
+"Disable 'Entering Ex mode. Type 'visual' to go to Normal mode.' and map it to text formatiing
+map Q gq
+map gQ <Nop>
+
+"Disable K looking things up
+map K <Nop>
+
+"Disable F1 help. Better yet, I meant Esc anyway.
+imap <F1> <Esc>
+
+"Pasting should be at the right indent level
+map p ]p
+map P ]P
+
+"Quick insertion of a newline by pressing enter
+nnoremap <silent> <CR> jO<Esc>
+
+"Remap space to insert a single character
+noremap <Space> i_<Esc>r
+
+"Y yanks to the end of the line, rather than the whole line (use yy)
+noremap Y y$
+
+"End of this line more important than end of previous line
+noremap - _
+noremap _ -
+
+" Use tab to exit insert mode
+inoremap <Tab> <Esc>
+" inoremap <Esc> <nop>
+" ... and command line mode
+cnoremap <Tab> <Esc>
+" ... and visual mode
+vnoremap <Tab> <Esc>
+" ... and to format text in normal mode. (It's a useful key!)
+nnoremap <Tab> =
