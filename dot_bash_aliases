@@ -13,7 +13,7 @@ _print_if_nonzero() {
 }
 PROMPT_COMMAND='_exit_status=$?' # This runs before $PS1 is evaluated, saving the exit status
 # Single quotes cause this to be reevaluated each prompt, to keep branch up to date
-export PS1='\e[1;36m\u@$_human_hostname\e[m\e[1;32m \w \e[m\e[1;33m$(_git_branch)\e[m\e[1;35m$(_print_if_nonzero $_exit_status)\e[m$ '
+export PS1='\u@$_human_hostname \w $(_git_branch)$(_print_if_nonzero $_exit_status)$ '
 
 # Up arrow history searching
 bind '"\e[A": history-search-backward'
