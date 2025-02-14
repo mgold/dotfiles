@@ -1,4 +1,4 @@
-source .gitaliases
+source ~/.git_aliases
 
 alias v='vim'
 alias ls='ls -laF'

@@ -1,0 +1,13 @@
+# This file is sourced by the default .bashrc
+
+source ~/.aliases
+
+human_hostname=$(echo $HOSTNAME | sed 's/-\?[0-9a-f]\{8\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{12\}//')
+# This doesn't update when you change branches
+#branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+#export PS1="\e[1;36m\u@$human_hostname\e[m\e[1;32m \w \e[m\e[1;33m$branch${branch+ }\e[m$ "
+export PS1="\e[1;36m\u@$human_hostname\e[m\e[1;32m \w \e[m$ "
+
+# Up arrow history searching
+# This is causing a glitch with text overwriting?
+#bind '"\e[A": history-search-backward'
