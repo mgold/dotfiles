@@ -1,4 +1,6 @@
 # This file is sourced by the default .bashrc
+# It should contain only bash-specific config
+# Other config should go into .aliases
 
 source ~/.aliases
 
