@@ -3,7 +3,8 @@
 source ~/.aliases
 
 # Reomove UUIDs, optionally prefixed by a dash, from the hostname
-_human_hostname=$(echo $HOSTNAME | sed 's/-\?[0-9a-f]\{8\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{12\}//')
+# -s removes .local from $HOSTNAME
+_human_hostname=$(hostname -s | sed 's/-\?[0-9a-f]\{8\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{12\}//')
 _git_branch() {
     branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
     echo ${branch}${branch:+" "} # "alternate value", used to add a space only if branch is nonempty
