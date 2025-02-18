@@ -1,7 +1,12 @@
+export BASH_SILENCE_DEPRECATION_WARNING=1 # macOS
+export EDITOR=vim
+
 source ~/.git_aliases
 
+EDITOR='vim'
+
 alias v='vim'
-alias ls='ls -laF'
+alias ls='ls -lartF'
 mcdir () {
     mkdir -p "$1"
     cd "$1"
@@ -9,4 +14,5 @@ mcdir () {
 alias gaml='yq eval --output-format=props'
 alias p='pnpm'
 alias pi='pnpm i'
-
+alias tf='terraform'
+alias python=python3
