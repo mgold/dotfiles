@@ -1,18 +1,29 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1 # macOS
-export EDITOR=vim
 
 source ~/.git_aliases
 
-EDITOR='vim'
-
+export EDITOR=vim
 alias v='vim'
-alias ls='ls -lartF'
+
+alias ls='ls -lartF --color=auto'
 mcdir () {
     mkdir -p "$1"
     cd "$1"
 }
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 alias gaml='yq eval --output-format=props'
 alias p='pnpm'
 alias pi='pnpm i'
 alias tf='terraform'
 alias python=python3
+
+# pnpm
+export PNPM_HOME="$(echo ~)/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
