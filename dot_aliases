@@ -5,6 +5,9 @@ if [ -d "/opt/homebrew/bin" ]; then
 fi
 
 source ~/.git_aliases
+if [ -f "~/.work_aliases" ]; then
+    source ~/.work_aliases
+fi
 
 export EDITOR=vim
 alias v='vim'
