@@ -24,6 +24,8 @@ alias pi='pnpm i'
 alias tf='terraform'
 alias python=python3
 
+alias cm=chezmoi
+
 # pnpm
 export PNPM_HOME="$(echo ~)/.local/share/pnpm"
 case ":$PATH:" in
