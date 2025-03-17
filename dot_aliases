@@ -29,10 +29,16 @@ alias python=python3
 
 alias cm=chezmoi
 
-# pnpm
-export PNPM_HOME="$(echo ~)/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+if command -v pnpm 2>&1 >/dev/null
+then
+    export PNPM_HOME="$(echo ~)/.local/share/pnpm"
+    case ":$PATH:" in
+      *":$PNPM_HOME:"*) ;;
+      *) export PATH="$PNPM_HOME:$PATH" ;;
+    esac
+fi
+
+if command -v nodenv 2>&1 >/dev/null
+then
+    eval "$(nodenv init - bash)"
+fi
