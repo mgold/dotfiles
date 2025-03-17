@@ -41,6 +41,15 @@ syntax enable "Enable highlighting
 set guioptions-=T
 set t_Co=256
 colorscheme jellybeans "busybee
+highlight Search ctermbg=brown ctermfg=white cterm=bold
+
+"gitgutter settings
+set updatetime=100 "update quickly
+highlight! link SignColumn LineNr
+highlight GitGutterAdd ctermfg=71 "brighter colors
+highlight GitGutterChange ctermfg=81
+highlight GitGutterDelete ctermfg=167
+set signcolumn=number " put symbols in the number column, don't max window wider
 
 set encoding=utf8
 try
@@ -72,9 +81,6 @@ set list listchars=tab:\ \ ,trail:·
 
 "Only one space after a period
 set nojoinspaces
-
-" gitgutter should update quickly
-set updatetime=100
 
 "End set statements. Begin remapping.
 
