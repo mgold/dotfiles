@@ -67,6 +67,7 @@ set expandtab
 "Leave tab-sensitive files alone
 au BufRead,BufNewFile Makefile set ts=4 sw=4 noexpandtab
 au BufRead,BufNewFile .gitconfig set ts=4 sw=4 noexpandtab
+au BufRead,BufNewFile dot_gitconfig.tmpl set ts=4 sw=4 noexpandtab "chezmoi template
 au BufRead,BufNewFile .py set ts=4 sw=4 noexpandtab
 
 set lbr "Line break
