@@ -42,6 +42,10 @@ set guioptions-=T
 set t_Co=256
 colorscheme jellybeans "busybee
 highlight Search ctermbg=brown ctermfg=white cterm=bold
+"Incsearch is the first term found when searching but before you press enter
+"I have not found a way to highlight the word the cursor is searching right now
+"The ! indicates precedence and is required
+highlight! link IncSearch Search
 
 "gitgutter settings
 set updatetime=100 "update quickly
