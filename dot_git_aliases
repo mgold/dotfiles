@@ -13,7 +13,7 @@ alias cdgr='cd $(git rev-parse --show-toplevel)' # cd git root
 
 alias gb='git branch'
 # [alias]
-#    br = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+#    br = "!git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{ time = substr($2, 1, length($2)-1) \":\"; printf(\"  \\033[33m%-17s\\033[37m %s\\033[0m\\n\", time, $1) }'"
 alias gbr='git br'
 alias gc='git checkout'
 alias gcb='git checkout -b'
