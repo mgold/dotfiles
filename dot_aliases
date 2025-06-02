@@ -5,7 +5,7 @@ if [ -d "/opt/homebrew/bin" ]; then
 fi
 
 source ~/.git_aliases
-if [ -f "~/.work_aliases" ]; then
+if [ -f "$HOME/.work_aliases" ]; then
     source ~/.work_aliases
 fi
 
@@ -23,7 +23,7 @@ alias egrep='egrep --color=auto'
 
 alias gaml='yq eval --output-format=props'
 alias p='pnpm'
-alias pi='pnpm i'
+alias pi='pnpm i --ignore-scripts '
 alias tf='terraform'
 alias python=python3
 
