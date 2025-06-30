@@ -4,7 +4,12 @@ if [ -d "/opt/homebrew/bin" ]; then
     export PATH="/opt/homebrew/bin:$PATH"
 fi
 
+if [ -d "$HOME/.local/bin" ]; then
+    export PATH=$HOME/.local/bin:$PATH
+fi
+
 source ~/.git_aliases
+
 if [ -f "$HOME/.work_aliases" ]; then
     source ~/.work_aliases
 fi
