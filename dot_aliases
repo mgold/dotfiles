@@ -34,6 +34,8 @@ alias python=python3
 
 alias cm=chezmoi
 
+alias dadjoke='curl -s -H "Accept: text/plain" https://icanhazdadjoke.com/'
+
 if command -v pnpm 2>&1 >/dev/null
 then
     export PNPM_HOME="$(echo ~)/.local/share/pnpm"
