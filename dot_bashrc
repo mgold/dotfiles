@@ -48,3 +48,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# enable mise-specific bash things
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate bash)"
+fi
