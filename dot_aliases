@@ -27,7 +27,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 alias gaml='yq eval --output-format=props'
-alias jwt_data="jq -R 'split(\".\")[1] | @base64d | fromjson'"
+alias jwt_payload="jq -R 'split(\".\")[1] | @base64d | fromjson'"
 
 alias p='pnpm'
 alias pi='pnpm i --ignore-scripts '
