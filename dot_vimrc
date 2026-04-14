@@ -22,7 +22,8 @@ set smartcase
 set hlsearch "Highlight searches
 set incsearch "more like webbrowser search
 
-set nolazyredraw "Don't redraw during macros
+set lazyredraw "Don't redraw during macros
+set regexpengine=1 "Force old regex engine (faster for syntax highlighting)
 
 set magic "For regular expressions
 
